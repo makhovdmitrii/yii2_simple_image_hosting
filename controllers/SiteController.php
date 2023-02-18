@@ -126,8 +126,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $Uploaded_Files = Uploadedfiles::find()->orderBy('name')->all();
-        return $this->render('about', ['uploaded_files' => $Uploaded_Files]);
+        $UploadedFiles = Uploadedfiles::find()->orderBy('name')->all();
+        return $this->render('about', ['uploadedFiles' => $UploadedFiles]);
     }
     public function actionUpload()
     {

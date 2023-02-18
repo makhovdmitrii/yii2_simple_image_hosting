@@ -14,9 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
         Uploaded file list:
     </p>
     <?php
-    foreach ($uploaded_files as $uploaded_file)
+    foreach ($uploadedFiles as $uploadedFile)
     {
-        echo "<ul><li>". $uploaded_file->name . " # " . $uploaded_file->date_time . '</li></ul>';
+        echo "<ul><li>". $uploadedFile->name . " # " . $uploadedFile->date_time . '</li></ul>';
     }
     ?>
 
