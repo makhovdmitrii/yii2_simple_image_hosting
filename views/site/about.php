@@ -4,15 +4,21 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = 'Uploaded Files';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        Uploaded file list:
     </p>
+    <?php
+    foreach ($uploaded_files as $uploaded_file)
+    {
+        echo "<ul><li>". $uploaded_file->name . " # " . $uploaded_file->date_time . '</li></ul>';
+    }
+    ?>
 
-    <code><?= __FILE__ ?></code>
+<!--    <code>--><?//= __FILE__ ?><!--</code>-->
 </div>
