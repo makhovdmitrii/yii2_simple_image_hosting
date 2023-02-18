@@ -4,6 +4,7 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\web\UploadedFile;
+use app\models\Uploadedfiles;
 
 class UploadForm extends Model
 {
@@ -40,6 +41,9 @@ class UploadForm extends Model
                     $file->name = $file->baseName . date('Y_m_d_H_i_s') . '.' . $file->extension;
                 }
                 $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+                $uploadedFile = new Uploadedfiles();
+                $uploadedFile->name = $file->name;
+                $uploadedFile->save();
             }
             return true;
         } else {

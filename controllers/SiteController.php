@@ -11,6 +11,9 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+/* For debug purpose
+use app\models\Uploadedfiles;
+*/
 
 class SiteController extends Controller
 {
@@ -125,6 +128,10 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        /* For debug purpose
+        $Uploaded_Files = Uploadedfiles::find()->orderBy('name')->all();
+        var_dump($Uploaded_Files);
+        */
         return $this->render('about');
     }
     public function actionUpload()

@@ -5,14 +5,14 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%uploaded_files}}`.
  */
-class m230218_144258_create_uploaded_files_table extends Migration
+class m230218_144258_create_uploadedfiles_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%uploaded_files}}', [
+        $this->createTable('{{%uploadedfiles}}', [
             'id' => $this->primaryKey(),
             'name' => $this->text(),
             'date_time' => $this->datetime()->defaultExpression('now()'),
@@ -24,6 +24,6 @@ class m230218_144258_create_uploaded_files_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%uploaded_files}}');
+        $this->dropTable('{{%uploadedfiles}}');
     }
 }
