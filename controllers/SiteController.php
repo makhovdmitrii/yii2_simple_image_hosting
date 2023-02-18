@@ -135,7 +135,7 @@ class SiteController extends Controller
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
             if ($model->upload()) {
                 // file is uploaded successfully
-                return;
+                return $this->render('upload', ['model' => $model]);
             }
         }
 
