@@ -16,7 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     foreach ($uploadedFiles as $uploadedFile)
     {
-        echo "<ul><li>" . $uploadedFile->name . "<img src=minified/". $uploadedFile->name . " alt=\"image\"> # " . $uploadedFile->date_time . '</li></ul>';
+        echo "<ul><li><a href=\"uploads\\".$uploadedFile->name."\" target=\"_blank\">" . $uploadedFile->name . "</a>
+        <img src=minified/". $uploadedFile->name . " alt=\"image\"> # "
+            . $uploadedFile->date_time . '</li></ul>';
     }
     ?>
 
