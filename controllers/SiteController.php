@@ -126,7 +126,16 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $UploadedFiles = Uploadedfiles::find()->orderBy(['name' => SORT_ASC])->all();
+        if (Yii::$app->request->isPost &&
+            array_key_exists('orderByDate', Yii::$app->request->post())
+            && Yii::$app->request->post()['orderByDate'] === '1')
+        {
+            $UploadedFiles = Uploadedfiles::find()->orderBy(['date_time' => SORT_DESC])->all();
+        }
+        else
+        {
+            $UploadedFiles = Uploadedfiles::find()->orderBy(['name' => SORT_ASC])->all();
+        }
         return $this->render('about', ['uploadedFiles' => $UploadedFiles]);
     }
     public function actionUpload()

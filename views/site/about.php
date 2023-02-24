@@ -10,6 +10,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <?= Html::beginForm(['site/about'], 'post', ['enctype' => 'multipart/form-data']) ?>
+    <?= Html::checkbox('orderByDate', false, ['label' => 'Сортировать по дате']) ?>
+    <?= Html::submitButton('Отсортировать', ['class' => 'submit']) ?>
+    <?= Html::endForm() ?>
+    По умолчанию сортировка выполняется по имени файлов. Если выставлена галочка 'Сортировать по дате' то сортировка будет выполнена соответственно по дате.
     <p>
         Uploaded file list:
     </p>
